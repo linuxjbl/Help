@@ -1,0 +1,127 @@
+====== www.bitbucket.org =============
+  bitbucketMemo.txt
+====== github =============
+HTTP :  R W
+https://github.com/jblee3/test01.git
+SSH : R W
+git@github.com:jblee3/test01.git
+Git : R
+git://github.com/jblee3/test01.git
+
+
+--Read Only
+git clone git://github.com/jblee3/test01 test01
+
+-- HTTP
+------------
+git clone https://github.com/jblee3/test01.git test01
+git pull    ( pull = fetch + merge )
+git push origin master
+git branch -a
+git remote -v
+git remote show
+------------
+
+git push origin master:slave   ( <source-branch>:<dest-branch> )
+git push origin :slave         ( slave delete )
+             ~= git remote rm
+
+
+git help
+git help branch
+
+----------------------------------------
+git add README.md
+git commit -m "first commit"
+(git commit -a  : add + commit )
+git remote add origin https://github.com/jblee3/TcpIpSocket.git
+git push -u origin master
+----------------------------------------
+git add *
+git commit -m "second commit"
+(git commit -a  : add + commit )
+git push -u origin master
+----------------------------------------
+
+
+----------------------------------------
+git add -i       ( Interactive Add )
+    ...   2.update
+git commit  ( -m "....." )
+git log
+----------------------------------------
+
+----------------------------------------
+gitk ( --all )  ( Graphical tool )
+git difftool  ( Graphical tool )
+----------------------------------------
+
+----------------------------------------
+git branch work    ( create branch named "work" )
+git branch -d work ( delete branch named "work" )
+git branch         ( show currnet branches  )
+git checkout work  ( move to work branch )
+git checkout -b work  ( creatge and move to work branch )
+
+(after add, commit)
+git checkout master
+git merge work
+git pull
+git push
+----------------------------------------
+
+ssh-keygen
+.ssh/id_rsa.pub copy to github.com
+
+git clone git@github.com:jblee3/test01.git
+
+-------- ssh ( HTTPS)  --------------------
+git@github.com:jblee3/TCP_IP.git
+
+** Create a new repository on the command line
+touch README.md  ( OR echo # TCP_IP >> README.md )
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:jblee3/TCP_IP.git
+( git remote add origin https://github.com/jblee3/TCP_IP.git )
+git push -u origin master
+
+
+** Push an existing repository from the command line
+git remote add origin git@github.com:jblee3/TCP_IP.git
+( git remote add origin https://github.com/jblee3/TCP_IP.git )
+git push -u origin master
+
+Warning: Permanently added the RSA host key for IP address '192.30.252.129' to the list of known hosts.
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+------------------------------
+
+
+================
+git config -l
+
+git config --global --editor
+git config --global core.editor vim
+
+
+git log
+git log --oneline  (  ==> git checkout a1e8fb5 )
+git log --graph --decorate --oneline
+
+
+git revert
+git reset
+git reset --hard
+git reset <commit>
+git reset --hard <commit>
+
+The git reset HEAD~2 command moves the current branch backward by two commits,
+
+The git clean command removes untracked files from your working directory.
+
+git rebase
+git reflog
+================
+
