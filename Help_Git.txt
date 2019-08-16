@@ -1,11 +1,13 @@
+Hangul : 한글  
 ====== www.bitbucket.org =============
-  bitbucketMemo.txt
+  bitbucketMemo.txt 
+
 ====== github =============
 HTTP :  R W
 https://github.com/jblee3/test01.git
 SSH : R W
 git@github.com:jblee3/test01.git
-Git : R
+Git : R 
 git://github.com/jblee3/test01.git
 
 
@@ -29,6 +31,17 @@ git push origin :slave         ( slave delete )
 
 git help
 git help branch
+
+
+=======  Must to be done ... before commit   ========
+ $ git config --global user.email "linuxjbl@gmail.com"
+ $ git config --global user.name "Linux JBL"
+------------------------------------------------------
+ $ git config --global core.editor vim
+
+    List
+ $ git -l
+------------------------------------------------------
 
 ----------------------------------------
 git add README.md
@@ -70,10 +83,7 @@ git pull
 git push
 ----------------------------------------
 
-ssh-keygen
-.ssh/id_rsa.pub copy to github.com
 
-git clone git@github.com:jblee3/test01.git
 
 -------- ssh ( HTTPS)  --------------------
 git@github.com:jblee3/TCP_IP.git
@@ -107,17 +117,17 @@ git config --global core.editor vim
 
 
 git log
-git log --oneline  (  ==> git checkout a1e8fb5 )
+git log --oneline  (  ==> git checkout a1e8fb5 ) 
 git log --graph --decorate --oneline
 
 
-git revert
-git reset
+git revert 
+git reset 
 git reset --hard
 git reset <commit>
 git reset --hard <commit>
 
-The git reset HEAD~2 command moves the current branch backward by two commits,
+The git reset HEAD~2 command moves the current branch backward by two commits, 
 
 The git clean command removes untracked files from your working directory.
 
@@ -125,3 +135,61 @@ git rebase
 git reflog
 ================
 
+
+   github
+
+====================
+===  SSH
+====================
+
+Quick setup — if you’ve done this kind of thing before
+or
+
+We recommend every repository include a README, LICENSE, and .gitignore.
+…or create a new repository on the command line
+
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:linuxjbl/test.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin git@github.com:linuxjbl/test.git
+git push -u origin master
+
+…or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+====================
+===  HTTPS
+====================
+
+
+Quick setup — if you’ve done this kind of thing before
+or
+
+We recommend every repository include a README, LICENSE, and .gitignore.
+…or create a new repository on the command line
+
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/linuxjbl/test.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/linuxjbl/test.git
+git push -u origin master
+
+…or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+===============================================================
