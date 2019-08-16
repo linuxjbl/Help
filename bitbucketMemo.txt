@@ -1,0 +1,86 @@
+====== www.bitbucket.org =============
+
+mkdir /path/to/your/project
+cd /path/to/your/project
+git init
+git remote add origin https://jblee3@bitbucket.org/jblee3/testfirst.git
+
+echo "# This is my README" >> README.md 
+git add README.md
+git commit -m "First commit. Adding a README."
+git push -u origin master
+
+
+git clone https://jblee3@bitbucket.org/jblee3/testfirst.git <local_name>
+=====================================
+
+
+
+
+
+
+-- HTTP
+------------
+git clone https://github.com/jblee3/test01.git test01
+git pull
+git push origin master
+git branch -a
+git remote -v
+------------
+
+git push origin master:slave   ( <source-branch>:<dest-branch> )
+git push origin :slave         ( slave delete )
+
+
+git help
+git help branch
+
+----------------------------------------
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jblee3/TcpIpSocket.git
+git push -u origin master
+----------------------------------------
+git add *
+git commit -m "second commit"
+git push -u origin master
+----------------------------------------
+
+
+----------------------------------------
+git add -i       ( Interactive Add )
+    ...   2.update
+git commit  ( -m "....." )
+git log
+----------------------------------------
+
+----------------------------------------
+gitk ( --all )  ( Graphical tool )
+git difftool  ( Graphical tool )
+----------------------------------------
+
+----------------------------------------
+git branch work    ( create branch named "work" )
+git branch -d work ( delete branch named "work" )
+git branch         ( show currnet branches  )
+git checkout work  ( move to work branch )
+
+git checkout master
+git merge work
+git pull
+git push
+----------------------------------------
+
+=== SSH ssh =====
+
+Login  ->  avatar -> Settings  ->  SECURITY > SSH keys
+copy public key
+
+
+git@bitbucket.org:<accountname>/<reponame>.git
+git@bitbucket.org:linuxjbl/firsttest.git
+OR
+ssh://git@bitbucket.org/<accountname>/<reponame>.git
+ssh://git@bitbucket.org/linuxjbl/firsttest.git
+
+==================================================

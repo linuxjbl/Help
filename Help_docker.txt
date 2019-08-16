@@ -1,0 +1,60 @@
+
+==============================================
+=====  docker 
+==============================================
+
+== RStudio Server 
+
+($ docker run --rm -d -p 8787:8787 rocker/rstudio)
+$ docker run  -d -p 8787:8787 --name="RStudio" rocker/rstudio
+
+Web browser
+192.168.2.118:8787
+    username : rstudio
+    password : rstudio
+
+
+    -d : Back ground
+    --rm  : resource ...
+
+
+== Own Cloud Server
+$ docker run -d -p 8080:80 -v /home/OwnCloudData:/var/www/html/data --name="OwnCloudData" owncloud
+
+no --rm :  
+docker start OwnCloudData
+docker stop OwnCloudData
+
+Web browser
+192.168.2.118:8080
+
+
+
+
+== GitLab Server
+
+http://psychoria.tistory.com/522
+
+---------------------------------------------------
+
+docker commit -a "JBLee" -m "install vim" golang jblee3/jbl_golang
+
+
+docker login
+
+docker commit -a "jblee3" -m "first push" golang jblee3/jbl_golang
+                                         ps_name  tag_name
+Tag name : jblee3/... 
+docker push jblee3/jbl_golang
+---------------------------------------------------
+
+==============================================
+=====  Web brouser
+==============================================
+Google chrome
+    /opt/google/chrome/chrome
+
+Fire Fox
+    /usr/lib/firefox/firefox
+
+
