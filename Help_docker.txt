@@ -29,8 +29,6 @@ Web browser
 192.168.2.118:8080
 
 
-
-
 == GitLab Server
 
 http://psychoria.tistory.com/522
@@ -58,3 +56,25 @@ Fire Fox
     /usr/lib/firefox/firefox
 
 
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+docker commit -a "JBLee" -m "install vim" golang jblee3/jbl_golang:0.1
+                < User >    < Message >  <container name> <image name:tag_name>
+docker login
+docker push jblee3/jbl_golang
+--------------------------------------------------------------------------------------
+docker run --rm -it ubuntu:16.04 /bin/bash 
+docker run -it  --name jblubuntu  ubuntu:latest /bin/bash 
+--------------------------------------------------------------------------------------
+docker push jblee3/jbl_clang
+--------------------------------------------------------------------------------------
+docker rm [container ID]
+docker rmi [image ID]   : after container remove
+docker rmi -f [image ID] : forced without container remove
+--------------------------------------------------------------------------------------
+docker ps
+docker attach [ID]
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
