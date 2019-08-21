@@ -61,9 +61,15 @@ snippet mod
 	module ${1:module_name} (${2});
 		${0}
 	endmodule
-snippet jbl
-	module ${1:module_name} (${2});
-		${3}
-		${4}
-		${0}
-	endmodule
+# Module generate
+snippet gen
+	reg [3:0] temp;
+	genvar idx;
+
+	generate
+	for (idx = 0; idx < 3 ; idx = idx + 1) begin: 
+		always @(posedge sysclk) begin
+			temp[idx] <= 1'b0;
+		end
+	end
+	endgenerate
