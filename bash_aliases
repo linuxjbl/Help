@@ -4,6 +4,7 @@ a as='apt-cache search'
 a ag='sudo apt-get install -y'
 a c=clear
 a diff='diff -u'
+a df='df -h'
 a grep='grep -H -n --color=auto'
 a ff="find . -name '\!*' -print"
 a h='history'
