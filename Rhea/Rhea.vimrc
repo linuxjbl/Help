@@ -12,6 +12,7 @@ set hlsearch
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set incsearch
 "----------------------
 " VIM Environment
 "----------------------
