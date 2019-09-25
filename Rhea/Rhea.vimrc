@@ -22,6 +22,7 @@ set ai
 set ts=4
 set bg=dark
 
+syntax on
 filetype on
 
 set tags=/home/jblee/Study/ARMLinuxKernel/src/linux-2.6.30.4/tags
