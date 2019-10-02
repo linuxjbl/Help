@@ -22,6 +22,8 @@ set ai
 set ts=4
 set bg=dark
 
+set visualbell
+
 syntax on
 filetype on
 
