@@ -12,6 +12,7 @@ set hlsearch
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set incsearch
 "----------------------
 " VIM Environment
 "----------------------
@@ -20,6 +21,11 @@ let g:SrcExpl_refreshTime = 100
 set ai
 set ts=4
 set bg=dark
+
+set visualbell
+
+syntax on
+filetype on
 
 set tags=/home/jblee/Study/ARMLinuxKernel/src/linux-2.6.30.4/tags
 
