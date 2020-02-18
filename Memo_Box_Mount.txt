@@ -1,0 +1,10 @@
+
+#### Box Cloud Directory Mount
+# pacman -S davfs2
+
+# mkdir -m 755 -p /home/jblee/Box_Cloud
+
+# mount -t davfs https://dav.box.com/dav /home/jblee/Box_Cloud
+zfmanjaro@gmail.com
+jble200ha@gmail.com
+

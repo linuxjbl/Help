@@ -1,0 +1,306 @@
+
+
+20190222 
+
+
+1.rufus.exe 로  설치 USB 만들기
+    구형보드 : MBR/바이오스
+    신형보드 : GPT/UEFI 방식  <--
+
+    DD 디스크 이미지 모드로 
+
+2.USB 연결 후 부팅 시 BOOT MENU 에서 'USB: UEFI ......' 선택
+3. 설치 진행
+
+==  BIOS
+L200HA  BIOS진입     : F2 연타,
+        부팅장치선택 : ESC 연타
+
+    BIOS Boot메뉴 Fast Boot : Disable 로 변경 
+                  Boot Option #1 :   UEFI: Generic Flash ...
+         Security메뉴 Secure Boot Control  : Disable 로 변경 
+
+
+
+설치형식 
+디스크지우고 Linux 설치 
+
+esp,boot : FAT32 -> /boot/efi   512 MiB   --> 16 MiB 면 충분할듯 ㅜㅜ
+: ext4 -> /
+
+------------------------------------------------------
+참고
+https://cybertramp.net/21    : 만자로 시나몬으로 간 이유 
+https://optic.tistory.com/249
+https://hamonikr.org/board_bFBk25/19733
+
+------------------------------------------------------
+
+fn 키 잘 됨 : touch pad Disable
+
+
+setting -> 키보드 -> 레이아웃 -> options... -> caps lock을 ctrl 
+
+
+     Remap CapsLock to control   
+
+I’ve spent several hours trying to resolve that simple problem.
+ All I’ve read was like “Xmodmap” or “xcape”
+The only problem was - freshly mapped key working with capslock. At the same time. After dozens different approaches Such a strange bug.
+
+Ended up with adding line in the file:
+
+Option "XkbOptions" " ctrl:swapcaps"
+ /etc/X11/xorg.conf.d/00-keyboard.conf
+
+Hope it helps someone.
+
+------------------------------------------------------
+
+설정 -> manjaro 설정   언어설정 
+------------------------------------------------------
+
+https://okky.kr/article/526133
+
+
+ 만자로는 아치 리눅스 기반이기 때문에, 사용 중 궁금한 내용은 리눅스 관련 가장 방대한 위키 중 하나인 
+아치 위키의 자료를 참조하면 좋습니다. 
+
+예컨대 UIM에 대한 내용은 다음과 같은 문서가 있습니다:
+?https://wiki.archlinux.org/index.php/Localization/Korean#uim-byeoru ?
+
+
+어떤 리눅스든 패키지 관리자를 익히는 것이 가장 중요하고 기본이 되는 일인데, 
+만자로/아치의 경우는 몇 가지 선택지가 있습니다. 
+전 `yaourt`라는 것을 사용하고 구글 크롬의 경우 `yaourt -S google-chrome` 이런 식으로 설치할 수 있습니다. 
+
+
+
+조언받은대로 home 파티션은 따로 두었습니다. 
+근데 Mint설치하면서 혹시몰라 home디렉토리는 다시 잡았습니다. swap하고 root도 논리로 할당하는김에요 :)
+
+
+바로 그 문서를 읽었습니다. uim을 기본입력기로 설정하는 과정에서 답답하더군요.
+uim 세팅 자체를 우분투에서 해봤기 때문에 자신있게 골랐는데, 너무 난감했습니다.
+분명 지정했는데??? 하고 2시간 고민끝에 일단 포기로 결론을 내렸습니다.
+
+yaourt는 AUR의 패키지 관리자고 pacman이 만자로의 공식 패키지 관리자인 것은 알고 있습니다.
+크롬 설치까지는 해보았고, 나눔글꼴 설치하다가 자체 오류가 있는것 같아서 미뤄두었습니다.
+
+느리다는 얘기는 AUR이 느리다는 얘기가 아니라 Chrome이 Google에서 공식적으로 지원하지 않기떄문에 
+직접 포팅(?)한 패키지를 다운받는데, 공식 패키지가 아니라 느리다는 얘기를 어디선가 읽었습니다.
+그 글이 틀렸을 수도 있습니다. 제가 직접사용하기에는 느리다는 느낌은 못받았습니다.
+
+
+------------------------------------------------------
+한글   fcitx 
+
+https://cholchori.tistory.com/1443
+
+.xprofile에 
+    
+locale -a 나오는 list 중 선택 
+
+
+input method   Hangul을 위로하니까 먼저 한글 나오는 문제 해결 
+
+
+https://www.bada-ie.com/board/view/?page=1&uid=2009&category_code=26&code=all&key=&keyfield=
+
+
+
+------------------------------------------------------
+만자로 팁 
+https://hamonikr.org/board_bFBk25/54212
+
+Update :
+    sudo pacman -Syyu  
+
+vim 설치 :
+    sudo pacman -Sy vim
+
+# 팩맨 검색
+pacman -Ss "검색어"
+
+# 팩맨 설치
+pacman -S "패키지"
+
+------------------------------------------------------
+AUR  yaourt 관련 : 
+    https://zeper.tistory.com/134
+    https://www.bada-ie.com/board/view/?page=3&uid=2072&category_code=25&code=all&key=&keyfield=
+    http://ders45.blogspot.com/2015/12/aur-yaourt.html
+    https://smores.tistory.com/1274
+------------------------------------------------------
+
+Best torrent client for Linux. Transmission Vs Deluge - YouTube
+    https://www.youtube.com/watch?v=aUAdgzEOgmE
+------------------------------------------------------
+How to install Google Chrome on Manjaro 18 Linux 
+    https://linuxconfig.org/how-to-install-google-chrome-on-manjaro-18-linux
+
+
+
+
+Step 1
+Open up the terminal and clone the latest Google Chrome AUR repository: 
+$ git clone https://aur.archlinux.org/google-chrome.git
+
+
+Step 2
+Build an AUR package. First navigate to a newly created google-chrome directory. Then execute the makepkg command to build a Google Chrome AUR package: 
+$ cd google-chrome/
+$ makepkg -s
+
+When finished the result should be a newly built Google Chrome package ready for the installation: 
+$ ls *.xz
+google-chrome-70.0.3538.77-1-x86_64.pkg.tar.xz
+
+
+Step 3
+Using the pacman command install Google Chrome package. Replace the package name suffix with the Google Chrome version you have compiled previously: 
+$ sudo pacman -U --noconfirm google-chrome-70.0.3538.77-1-x86_64.pkg.tar.xz
+
+
+Step 4
+The Google Chrome browser installation is now complete. 
+Use the start menu and search for Chrome browser to launch it or simply start it from the command line: 
+$ google-chrome-stable
+
+
+
+------------------------------------------------------
+
+1. 아치 리눅스 위키 (https://wiki.archlinux.org/) 가 무진장 잘 되어있습니다. 각 패키지 별 기본 세팅이라던지 문제 해결 방법 들이 매우 정리가 잘 되어있어요. 만자로로 넘어간 뒤 리눅스 관련해서 스택오버플로우에 가 본 적이 없네요. 정말 속편해요. 그리고 공부하기에도 좋아서 아치 리눅스 위키에서 좀 하다 보면 어느 새 웬만한건 알아서 처리할 수 있는 정도까지 갑니다.
+
+ 
+
+2. 항상 최신 패키지 유지와 AUR. 아치리눅스 계열은 배포판 버전이 따로 없어요. 무조건 최신패키지에 맞춰지거든요. 새 버전 나오면 아치리눅스에서 신속하게 반영이 됩니다. 또한 기본 pacman 패키지에 없는 것들은 AUR 에 뒤져보면 다 나옵니다. 별별 패키지들이 AUR에 등록이 되어있고 항상 최신버전이 유지됩니다. .deb파일 찾는답시고 인터넷 페이지 뒤질 필요가 없어요.
+
+ 
+
+아치리눅스는 첨에 시작하기 좀 힘든 배포판인데 만자로가 이걸 쉽고 편하게 만들었죠. 그게 인기 비결이라고 생각합니다. 분명히 서버같은 곳에서는 쓰기 좀 뭣하지만 개인 데스크탑용으로는 훌륭하다고 봅니다.
+
+------------------------------------------------------
+Dropbox 
+    https://linuxhint.com/install_dropbox_manjaro_linux/
+
+
+
+
+Dropbox ? Manjaro 
+How to Install Dropbox on Manjaro Linux
+
+If you’re an internet user for quite some time, then you may have already heard the name of Dropbox, 
+or you’re already a user of it. 
+Dropbox is a free file hosting service that offers file sync, personal cloud, cloud storage and client software.
+  
+Due to its simplicity and easy-to-use environment, Dropbox has gained a huge reputation in the market. 
+By default, it allows you 2GB of space for free. 
+However, the storage capacity can be increased by purchasing more storage space.
+
+Are you a heavy Dropbox user like me? Then getting the Dropbox client is the right thing to do 
+instead of browsing your storage from your web browser. 
+Dropbox client is available for all the platforms including Windows, macOS and Linux.
+
+How do you enjoy the Dropbox client on Manjaro Linux, a nice and cool Arch-based distro? Worry not. 
+Today, let’s find out on installing Dropbox on Manjaro Linux.
+
+Getting Dropbox client
+
+The Dropbox client isn’t available on the default software repository of Manjaro Linux. 
+We have to get the app from the AUR repository.
+
+Note ? For the auto sync feature of Dropbox, 
+the client requires the “Dropbox” folder to be on an “ext4” partition.
+
+If you’ve used Arch Linux or somehow familiar with the environment, 
+you already know the rules of using AUR software ? grabbing the source, 
+compiling and installing the software. Let’s get started.
+?Grabbing the source
+
+----
+Make sure that your system have “git” client installed ?
+sudo pacman -S git
+
+Once the installation is complete, grab the source code of Dropbox from AUR repository ?
+git clone https://aur.archlinux.org/dropbox.git
+
+?Building the client
+Once the code is downloaded, it’s time to compile the code.
+cd dropbox/
+ makepkg -si
+
+
+After the installation is complete, you’ll notice a new directory “~/Dropbox”.
+
+Tweaking Dropbox client
+
+Since v2.4.6, Dropbox added an auto update capability. 
+This feature automatically downloads the new release binaries to the “~/.dropbox-dist” directory. 
+Then, the service tries to hand over control to this binary. 
+Such action causes a confliction with “systemd” and continuously try to restart the service.
+
+A workaround is by preventing Dropbox from downloading the auto update. 
+The method is to create the directory and mark it “Read-only”.
+
+rm -rf ~/.dropbox-dist
+install -dm0 ~/.dropbox-dist
+
+
+Using Dropbox
+
+Start Dropbox client from your system menu ?
+
+At first, you have to log into your account via a browser. 
+The app will automatically open your default browser and redirect you to the login page.
+
+
+Once you login, you can start using Dropbox.
+
+The “~/Dropbox” directory will work as your official Dropbox storage. 
+The total file size of the folder can’t be higher than your total cloud storage. 
+If you have any file in your Dropbox folder, you’ll notice those are already synced into that local folder.
+
+
+If you want to add a file(s)/folder(s), all you have to do is put that into the Dropbox folder.
+
+Don’t forget to check out the result ?
+
+Enjoy!
+
+------------------------------------------------------
+
+http://egloos.zum.com/ZHANITEST/v/1418575
+
+yaourt 설치 
+
+
+AUR에서 PKGBUILD와 함께 쓰기 위해 base-devel 패키지를 설치합니다.
+
+# pacman -S base-devel
+
+텍스트 편집기로 pacman.conf 파일을 열어,
+
+# nano /etc/pacman.conf
+
+맨 하단에
+
+[archlinuxfr]
+SigLeven = Never
+Server = http://repo.archlinux.fr/$arch
+
+요 세 줄을 추가해주고 저장합니다.
+
+# pacman -Syy
+# pacman -S yaourt
+
+싱크 후에 yaourt를 설치해주면 끝!
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
+------------------------------------------------------
