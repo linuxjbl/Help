@@ -1,0 +1,19 @@
+
+https://scribles.net/mapping-caps-lock-key-to-control-key/
+
+
+
+3. Linux    ubuntu 16.04
+I tested this with Ubuntu 16.04.
+
+3-1. Open keyboard config file.
+	
+	sudo nano /etc/default/keyboard
+
+3-2. Search a line starts with “XKBOPTIONS” and edit as below:
+	
+	XKBOPTIONS=ctrl:nocaps
+
+3-3. Restart PC for the changes to take effect.
+	
+	sudo reboot
