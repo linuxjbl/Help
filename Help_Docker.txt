@@ -105,6 +105,23 @@ curl -fsSL https://get.docker.com/ | sudo sh
 curl -s    https://get.docker.com/ | sudo sh
 
 --------------------------------------------------------------------------------------
+Anaconda3
+https://www.slipp.net/wiki/pages/viewpage.action?pageId=26640967
+
+1. Python interpreter 
+docker run -it -p 8888:8888 -v $(pwd):/notebooks continuumio/anaconda3
+-p : port 지정 
+-v : directory 연결 : 현재폴더를 docker 내부에 notebooks라는 폴더를 만들어 연결하라는것
+
+2. Terminal mode
+docker run -it -p 8888:8888 -v $(pwd):/notebooks continuumio/anaconda3 /bin/bash
+
+
+Python 실행예)
+root@125aea81a7e8:/# python
+
+Jupyter 실행예)
+root@125aea81a7e8:/# jupyter notebook --ip='*' --port=8888 --no-browser
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
