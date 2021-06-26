@@ -17,3 +17,19 @@ I tested this with Ubuntu 16.04.
 3-3. Restart PC for the changes to take effect.
 	
 	sudo reboot
+
+
+
+------------------------------------------------------
+
+   ubuntu 20.04
+
+sudo apt install gnome-tweak-tool
+
+프로그램 표시 -> tw
+기능개선  : 실행
+
+키보드와 마우스 -> 추가배치 옵션 ->  Caps Lock 동작
+
+
+------------------------------------------------------
